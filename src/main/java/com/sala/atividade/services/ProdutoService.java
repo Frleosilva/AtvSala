@@ -30,6 +30,8 @@ public class ProdutoService {
     public ProdutoModel atualizar(Long id, ProdutoModel produtoModel){
         ProdutoModel model = produtoRepository.findById(id).get();
         model.setNome(produtoModel.getNome());
+        model.setPreco(produtoModel.getPreco());
+        model.setQuantidadeEmEstoque(produtoModel.getQuantidadeEmEstoque());
         return produtoRepository.save(model);
     }
 
