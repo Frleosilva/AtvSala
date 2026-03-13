@@ -32,6 +32,7 @@ public class ProdutoService {
         model.setNome(produtoModel.getNome());
         model.setPreco(produtoModel.getPreco());
         model.setQuantidadeEmEstoque(produtoModel.getQuantidadeEmEstoque());
+        model.setStatusProduto(produtoModel.getStatusProduto());
         return produtoRepository.save(model);
     }
 

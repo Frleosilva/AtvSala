@@ -1,9 +1,7 @@
 package com.sala.atividade.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.sala.atividade.Enum.StatusProduto;
+import jakarta.persistence.*;
 
 @Entity
 public class ProdutoModel {
@@ -14,6 +12,8 @@ public class ProdutoModel {
     private String nome;
     private Double preco;
     private Integer quantidadeEmEstoque;
+    @Enumerated(EnumType.STRING)
+    private StatusProduto statusProduto;
 
     public ProdutoModel() {
     }
@@ -48,5 +48,13 @@ public class ProdutoModel {
 
     public void setQuantidadeEmEstoque(Integer quantidadeEmEstoque) {
         this.quantidadeEmEstoque = quantidadeEmEstoque;
+    }
+
+    public StatusProduto getStatusProduto() {
+        return statusProduto;
+    }
+
+    public void setStatusProduto(StatusProduto statusProduto) {
+        this.statusProduto = statusProduto;
     }
 }
